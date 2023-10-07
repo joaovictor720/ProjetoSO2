@@ -28,5 +28,7 @@ public class Main {
         SubstitutionAlgorithm lru = new LRU(numOfFrames, requestSequence, "LRU");
         lru.run();
         lru.print();
+
+        reader.close();
     }
 }
