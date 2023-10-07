@@ -17,8 +17,16 @@ public class Main {
         while ((temp = reader.readLine()) != null) {
             requestSequence.add(Integer.parseInt(temp));
         }
-        SubstitutionAlgorithm fifo = new FIFO(numOfFrames, requestSequence);
-        
+        SubstitutionAlgorithm fifo = new FIFO(numOfFrames, requestSequence, "FIFO");
+        fifo.run();
+        fifo.print();
 
+        SubstitutionAlgorithm otm = new OTM(numOfFrames, requestSequence, "OTM");
+        otm.run();
+        otm.print();
+
+        SubstitutionAlgorithm lru = new LRU(numOfFrames, requestSequence, "LRU");
+        lru.run();
+        lru.print();
     }
 }
